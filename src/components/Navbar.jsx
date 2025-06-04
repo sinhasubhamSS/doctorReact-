@@ -26,13 +26,13 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
   return (
     <div className="fixed w-full z-50 text-white bg-backgroundColor shadow-md dark:bg-gray-900">
-      <div className="flex justify-between items-center py-5 px-5 md:px-32">
+      <div className="flex justify-between items-center py-5 px-5 md:px-32 relative">
         {/* Logo */}
         <Link to="home" spy={true} smooth={true} duration={500} className="cursor-pointer">
           <h1 className="text-2xl font-semibold">DoctorDoom</h1>
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 text-lg font-medium">
           {navLinks.map((link) => (
             <Link
@@ -50,22 +50,30 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center gap-4">
-          {/* Contact Button */}
           <button
             onClick={openForm}
             className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300"
           >
-            Contact Us
+            Book Appointment
           </button>
-
-          {/* Dark Mode Toggle */}
-          <button onClick={toggleDarkMode} className="text-xl">
+          <button
+            onClick={toggleDarkMode}
+            className="text-xl p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
             {darkMode ? <BsSun /> : <BsMoon />}
           </button>
         </div>
 
-        {/* Mobile Icon */}
-        <div className="lg:hidden">
+        {/* Mobile Menu Icon */}
+        <div className="lg:hidden flex items-center gap-3">
+          {/* Toggle outside menu */}
+          <button
+            onClick={toggleDarkMode}
+            className="text-xl p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            {darkMode ? <BsSun /> : <BsMoon />}
+          </button>
+          {/* Hamburger */}
           {menu ? (
             <AiOutlineClose size={28} onClick={toggleMenu} className="cursor-pointer" />
           ) : (
@@ -97,12 +105,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             onClick={openForm}
             className="bg-brightColor px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300"
           >
-            Contact Us
-          </button>
-
-          {/* Mobile Theme Toggle */}
-          <button onClick={toggleDarkMode} className="text-xl mx-auto">
-            {darkMode ? <BsSun /> : <BsMoon />}
+            Book Appointment
           </button>
         </div>
       </div>

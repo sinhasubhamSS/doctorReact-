@@ -6,14 +6,22 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
+// Import images from assets folder
+import doc1 from "../assets/img/doc1.jpg";
+import doc2 from "../assets/img/doc2.jpg";
+import doc3 from "../assets/img/doc3.jpg";
+import doc4 from "../assets/img/doc4.jpg";
+import doc5 from "../assets/img/doc5.jpg";
+import doc6 from "../assets/img/doc6.jpg";
+
 const Doctors = () => {
   const data = [
-    { img: "/src/assets/img/doc1.jpg", name: "Dr. Serena Mitchell", specialties: "Orthopedic Surgeon" },
-    { img: "/src/assets/img/doc2.jpg", name: "Dr. Julian Bennett", specialties: "Cardiologist" },
-    { img: "/src/assets/img/doc3.jpg", name: "Dr. Camila Rodriguez", specialties: "Pediatrician" },
-    { img: "/src/assets/img/doc4.jpg", name: "Dr. Victor Nguyen", specialties: "Neurologist" },
-    { img: "/src/assets/img/doc5.jpg", name: "Dr. Ethan Carter", specialties: "Dermatologist" },
-    { img: "/src/assets/img/doc6.jpg", name: "Dr. Olivia Martinez", specialties: "Ophthalmologist" },
+    { img: doc1, name: "Dr. Serena Mitchell", specialties: "Orthopedic Surgeon" },
+    { img: doc2, name: "Dr. Julian Bennett", specialties: "Cardiologist" },
+    { img: doc3, name: "Dr. Camila Rodriguez", specialties: "Pediatrician" },
+    { img: doc4, name: "Dr. Victor Nguyen", specialties: "Neurologist" },
+    { img: doc5, name: "Dr. Ethan Carter", specialties: "Dermatologist" },
+    { img: doc6, name: "Dr. Olivia Martinez", specialties: "Ophthalmologist" },
   ];
 
   return (
@@ -56,7 +64,7 @@ const Doctors = () => {
                 <img
                   src={doc.img}
                   alt={doc.name}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-56 object-contain object-center"
                 />
                 <div className="p-4 text-center">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
