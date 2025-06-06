@@ -8,7 +8,7 @@ import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   // Toggle the class on <html> when darkMode changes
   useEffect(() => {
@@ -21,7 +21,7 @@ const App = () => {
   }, [darkMode]);
 
   return (
-    <div>
+    <div className="">
       <Navbar toggleDarkMode={() => setDarkMode(!darkMode)} darkMode={darkMode} />
 
       <main>

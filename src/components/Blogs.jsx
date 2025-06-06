@@ -8,6 +8,45 @@ import img4 from "../assets/img/blog4.jpg";
 import img5 from "../assets/img/blog5.jpg";
 import img6 from "../assets/img/blog6.jpg";
 
+const blogData = [
+  {
+    img: img1,
+    headlines: "Unraveling the Mysteries of Sleep",
+    description:
+      "Discover why quality sleep is vital for overall health, immunity, and mental clarity.",
+  },
+  {
+    img: img2,
+    headlines: "The Heart-Healthy Diet",
+    description:
+      "Explore nutrient-rich foods that support cardiovascular health and lower disease risk.",
+  },
+  {
+    img: img3,
+    headlines: "Understanding Pediatric Vaccinations",
+    description:
+      "Learn how vaccines protect children from life-threatening diseases and promote long-term health.",
+  },
+  {
+    img: img4,
+    headlines: "Navigating Mental Health",
+    description:
+      "A guide to managing stress, anxiety, and emotional well-being in today's fast-paced world.",
+  },
+  {
+    img: img5,
+    headlines: "The Importance of Regular Exercise",
+    description:
+      "From mood to metabolism, discover how movement transforms both body and mind.",
+  },
+  {
+    img: img6,
+    headlines: "Skin Health 101",
+    description:
+      "Tips for maintaining healthy, radiant skin through proper care and hydration.",
+  },
+];
+
 const Blogs = () => {
   return (
     <div
@@ -31,36 +70,9 @@ const Blogs = () => {
 
       <div className="my-8">
         <div className="flex flex-wrap justify-center gap-5">
-          <BlogCard
-            img={img1}
-            headlines="Unraveling the Mysteries of Sleep"
-            description="Discover why quality sleep is vital for overall health, immunity, and mental clarity."
-          />
-          <BlogCard
-            img={img2}
-            headlines="The Heart-Healthy Diet"
-            description="Explore nutrient-rich foods that support cardiovascular health and lower disease risk."
-          />
-          <BlogCard
-            img={img3}
-            headlines="Understanding Pediatric Vaccinations"
-            description="Learn how vaccines protect children from life-threatening diseases and promote long-term health."
-          />
-          <BlogCard
-            img={img4}
-            headlines="Navigating Mental Health"
-            description="A guide to managing stress, anxiety, and emotional well-being in today's fast-paced world."
-          />
-          <BlogCard
-            img={img5}
-            headlines="The Importance of Regular Exercise"
-            description="From mood to metabolism, discover how movement transforms both body and mind."
-          />
-          <BlogCard
-            img={img6}
-            headlines="Skin Health 101"
-            description="Tips for maintaining healthy, radiant skin through proper care and hydration."
-          />
+          {blogData.map((card, index) => (
+            <BlogCard key={index} {...card} index={index} />
+          ))}
         </div>
       </div>
     </div>

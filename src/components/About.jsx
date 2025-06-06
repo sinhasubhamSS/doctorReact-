@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../assets/img/about.jpg";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -7,7 +8,13 @@ const About = () => {
       id="about"
       className="min-h-screen flex flex-col lg:flex-row justify-between items-center lg:px-32 px-5 pt-24 lg:pt-16 gap-5 bg-white dark:bg-gray-900"
     >
-      <div className="w-full lg:w-3/4 space-y-4 text-gray-800 dark:text-gray-200">
+      <motion.div
+        className="w-full lg:w-3/4 space-y-4 text-gray-800 dark:text-gray-200 bg-gray-slate-200 "
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <h1 className="text-4xl font-semibold text-center lg:text-start">
           About Us
         </h1>
@@ -31,10 +38,17 @@ const About = () => {
           individuals and families to make informed decisions about their health
           and well-being.
         </p>
-      </div>
-      <div className="w-full lg:w-3/4">
+      </motion.div>
+
+      <motion.div
+        className="w-full lg:w-3/4"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
         <img className="rounded-lg" src={img} alt="Our medical team" />
-      </div>
+      </motion.div>
     </div>
   );
 };
